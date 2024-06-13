@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Update Record Demo API">
+        <div class="slds-var-p-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={contactList}
+                draft-values={draftValues}
+                onsave={handleSave}
+                columns={columns}
+                hide-checkbox-column>
+            </lightning-datatable>
+        </div>  
+    </lightning-card>
+</template>

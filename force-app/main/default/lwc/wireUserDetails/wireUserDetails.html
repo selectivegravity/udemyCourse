@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="User Details using Wire Adapter">
+        -----function-------
+        <template if:true={userdetails}>
+            <p>
+                User Id: {userId} <br>
+                User Name: {userdetails.Name.value} <br>
+                User Email: {userdetails.Email.value}
+            </p>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="User Details using Wire Adapter Property">
+        <template if:true={userDetailProperty.data}>
+            -----Property-------
+            <p>
+                User Id: {userId} <br>
+                User Name: {userDetailProperty.data.fields.Name.value} <br>
+                User Email: {userDetailProperty.data.fields.Email.value}
+            </p>
+        </template>
+    </lightning-card>
+</template>

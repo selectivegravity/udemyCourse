@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Get List UI">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr>
+                    <td> Name </td>
+                    <td> Owner</td>
+                    <td> Type </td>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={accountList} for:item="record">
+                    <tr key={record.id}>
+                        <td>{record.fields.Name.value}</td>
+                        <td>{record.fields.Owner.displayValue}</td>
+                        <td>{record.fields.Type.value}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <div class="slds-grid">
+            <div class="slds-var-m-around_medium">
+                <lightning-button variant="brand" label="Previous" onclick={handlePrevious}></lightning-button>
+            </div>
+            <div class="slds-var-m-around_medium">
+                <lightning-button variant="brand" label="Next" onclick={handleNext}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

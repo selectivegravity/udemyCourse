@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Check Permissions">
+        <template if:true={checkViewAllDataAccess}>
+            Hurray!! I have User Permission
+        </template>
+        <br>
+        <template if:true={checkTestPermission}>
+            Hurray!! I have Custom Permission
+        </template>
+    </lightning-card>
+</template>

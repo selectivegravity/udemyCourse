@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p> In this section we are learning about Shadow DOM, CSS rule, Query Selection with not include Shadow DOM</p>
+    </div>
+    <button label="Click Me" onclick="handleClick()">Click Me</button>
+    <div id="host"></div>
+    <script>
+        const element = document.querySelector('#host');
+        const shadowroot = element.attachShadow({mode:'open'});
+        shadowroot.innerHTML = '<p> This section is rendered from Shadow DOM';
+
+        function handleClick(){
+            let tags = document.querySelectorAll('p');
+            console.log(tags);
+        }
+    </script>
+    
+</body>
+</html>

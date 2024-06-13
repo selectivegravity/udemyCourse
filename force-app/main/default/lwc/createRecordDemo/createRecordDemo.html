@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  title="Create Record Demo using ui Api">
+        <form class="createForm">
+            <lightning-input type="text" label="First Name" name="FirstName" onchange={changeHandler}  class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-input type="text" label="Last Name" name="LastName" onchange={changeHandler}  class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-input type="text" label="Title" name="Title" onchange={changeHandler}  class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-input type="tel" label="Phone" name="Phone" onchange={changeHandler}  class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-input type="email" label="Email" name="Email" onchange={changeHandler}  class="slds-m-bottom_x-small"></lightning-input>
+            <lightning-button label="Create Contact" variant="brand" onclick={createContact}></lightning-button>
+        </form>
+    </lightning-card>
+</template>

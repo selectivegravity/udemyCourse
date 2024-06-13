@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Lifecycle: Mounting Phase">
+        <div class="slds-var-p-around_medium">
+            Parent Component
+            <lightning-input label="Enter Name" onkeyup={changehandler}></lightning-input>
+            {name}
+        </div>
+    </lightning-card>
+    <lightning-card title="Lifecycle: Mounting Phase">
+        <template if:false={isVisible}>
+            <lightning-button label="Show Child" variant="brand" onclick={handleclick}></lightning-button>
+        </template>
+        <template if:true={isVisible}>
+            <lightning-button label="Hide Child" variant="destructive" onclick={handleclick}></lightning-button>
+            <c-lifecycle-child></c-lifecycle-child>
+        </template>
+        <div class="slds-var-p-around_medium">
+        </div>
+    </lightning-card>
+</template>

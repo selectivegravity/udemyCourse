@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Accessing Element in the Component">
+        <div class="slds-p-around_medium lgc-bg">
+            <p> Hi, this is a paragraph</p>
+        </div>
+        <template for:each={carList} for:item="car">
+            <div key={car} class="carName">{car}</div>
+        </template>
+        <lightning-button variant="brand" label="Show Content in Console" onclick={handleclick}></lightning-button>
+    </lightning-card>   
+
+    <lightning-card title="lwc:dom = manual">
+        <div class="child" lwc:dom="manual">
+        </div>
+        <lightning-button variant="brand" label="Add Content Dynamically" onclick={handleclick1}></lightning-button>
+    </lightning-card>   
+</template>

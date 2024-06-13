@@ -1,0 +1,84 @@
+<template>
+    <lightning-card title="Controller to HTML">
+        {name}
+    </lightning-card>
+    <lightning-card title="HTML to Controller">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" onkeyup={changeHandler}></lightning-input>
+            {personName} is a {title}
+        </div>
+    </lightning-card>
+
+    <lightning-card title="@track Properties">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" onkeyup={changeHandler1} label="Enter City"></lightning-input>
+            {address.city} is my city.
+            <lightning-input type="text" onkeyup={changeHandler2} label="Enter Number"></lightning-input>
+            {numbers}
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Getter in LWC">
+        <ul>
+            <li> Getter always returns something </li>
+        </ul>
+        <div class="slds-p-around_medium lgc-bg">
+            {getProduct} <br>
+            {getFirstUser}
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Conditional Rendering">
+
+        <lightning-button label="Show Content" name="show" onclick={showContentFunc} variant="neutral"></lightning-button>
+
+        <template if:true={visibility}>
+            <div class="slds-p-around_medium lgc-bg">
+                Content Content Content Content Content Content Content Content Content Content Content Content Content Content Content
+            </div>
+            <lightning-button label="hide Content" name="hide" onclick={showContentFunc} variant="destructive"></lightning-button>
+        </template>
+
+        <template if:false={visibility}>
+            <div class="slds-p-around_medium lgc-bg">
+                No Content No Content No Content No Content No Content No Content No Content No Content No Content No Content
+            </div>
+        </template>
+
+        <lightning-input label="Prompt (Say 'HeLlo')" type="text" placeholder="Write a text" onkeyup={checkText}></lightning-input>
+
+        <template if:true={sayHi}>
+            <div class="slds-p-around_medium lgc-bg">
+                Hey hiiiiiiii... how are you, Brother?
+            </div>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="for:each Looping">
+        <template for:each={carList} for:item="car">
+            <ul key={car} class="slds-has-dividers_around-space">
+                <li class="slds-item"> {car} </li>
+              </ul>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Iterator Looping">
+        <template iterator:it={ceoList}>
+            <div  class="slds-var-p-around_medium lgc-bg" key={it.value.id}> 
+                <div if:true={it.first} class="slds-box slds-box_small">
+                    <strong> List of Top Companies is the World in 2024</strong>
+                </div>
+                <br>
+                <ul class="slds-has-dividers_around-space">
+                    <li class="slds-item">{it.value.id}</li>
+                    <li class="slds-item">{it.value.name}</li>
+                    <li class="slds-item">{it.value.company}</li>
+                </ul>
+                <br>
+                <div if:true={it.last} class="slds-box slds-box_small">
+                    <i>Thanks!</i>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

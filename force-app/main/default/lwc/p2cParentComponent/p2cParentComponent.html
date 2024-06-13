@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="P2C Communications">
+        <lightning-input label="Enter Number" type="text" onkeyup={changeHandler}></lightning-input>
+        <c-p2c-child-component message="Hurry!! i have received a alert messages"
+            card-heading="Parent to Child Communication using Primitive Data Type" numbers=20 booleans
+            progress={trackprogress}></c-p2c-child-component>
+        <c-p2c-carousel carousel-details={carouselData}></c-p2c-carousel>
+
+        <lightning-button label="Reset Slider" onclick={handleClick} variant="brand"></lightning-button>
+        <c-p2c-silder></c-p2c-silder>
+    </lightning-card>
+</template>

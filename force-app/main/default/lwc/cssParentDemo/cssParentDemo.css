@@ -1,0 +1,15 @@
+div{
+    color: darkred;
+    font-size: medium;
+}
+
+/* c-css-child-demo{
+    display: block;
+    color: azure;
+    background-color: black;
+} */
+
+p{
+    color: aquamarine;
+    display: block;
+}

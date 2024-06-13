@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Get Object Information using wire Adapter">
+        Default Record Type ID: {defaultRecordTypeId}
+    </lightning-card>
+    <lightning-card title="Get Objects Information using wire Adapter">
+        <template if:true={objectDetails}>
+            <template for:each={objectDetails.results} for:item="obj">
+                <div key={obj.result.apiName}>
+                    <div> Object Api Name: {obj.result.apiName}</div>
+                    <div> Object Default Record ID: {obj.result.defaultRecordTypeId}</div>
+                    <br>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+    <lightning-card title="Get Picklist Information using wire Adapter">
+        <!-- <template if:true={picklistValues}>
+            <template for:each={picklistValues} for:item="val">
+                <div key={val.label}>
+                    <div> Label: {val.value}</div>
+                    <div> Value: {val.label}</div>
+                    <br>
+                </div>
+            </template>
+        </template> -->
+        <template if:true={picklistValues}>
+            <lightning-combobox
+                    name="Industry"
+                    label="Industry"
+                    value={selectedIndustry}
+                    placeholder="Select Industry"
+                    options={picklistValues}
+                    onchange={handleChange} ></lightning-combobox>
+        
+            <p>Selected value is: {selectedIndustry}</p>
+        </template>
+    </lightning-card>
+</template>
